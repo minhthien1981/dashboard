@@ -1,0 +1,405 @@
+/************************
+*************************
+    Mobile Menu v1.0
+    (c) 2015 George Lieu
+    licensed under MIT
+************************
+************************/
+html {
+  overflow-x: hidden;
+}
+
+#page {
+  position: relative;
+  left: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  z-index: 20;
+  background: black;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.mmPushBody {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#mobile-menu {
+  position: absolute;
+  top: 0;
+  background: #44c7f4;
+  z-index: 99999;
+  -webkit-box-shadow: 0 1px 8px #555555;
+  -moz-box-shadow: 0 1px 8px #555555;
+  -o-box-shadow: 0 1px 8px #555555;
+  box-shadow: 0 1px 8px #555555;
+  display: none;
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  border-right: 1px solid #cccccc;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+  line-height: 1.42857;
+}
+
+.mobile-menu {
+  list-style-type: none;
+  margin: 0;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  padding-left: 0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.mobile-menu ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+.mobile-menu ul .expand {
+  background: #eeeeee;
+}
+.mobile-menu .mm-search {
+  height: 50px;
+  background-color: #555555;
+  color: #555555;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.mobile-menu .input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.mobile-menu .input-group .form-control:last-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.mobile-menu .input-group .form-control {
+  display: table-cell;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0px;
+}
+.mobile-menu .input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+.mobile-menu .input-group-btn:first-child > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.mobile-menu .input-group-btn > .btn {
+  position: relative;
+}
+.mobile-menu .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.42857;
+  border-radius: 8px;
+}
+.mobile-menu .form-control {
+  height: 18px;
+  padding: 6px 0;
+  font-size: 15px;
+  color: #555555;
+  background-color: #FFF;
+  border-radius: 8px;
+  border: 0;
+}
+.mobile-menu .btn-default {
+  height: 30px;
+  border: 0;
+  padding: 4px 5px;
+  background-color: white;
+}
+.mobile-menu .btn-default:hover {
+  background-color: white;
+}
+.mobile-menu .btn-default:focus {
+  background-color: white;
+}
+.mobile-menu .btn-default:active {
+  background-color: white;
+}
+.mobile-menu .home {
+  background-color: #01c7c5;
+  color: white;
+  height: 43px;
+  overflow: hidden;
+}
+.mobile-menu .home i {
+  padding-right: 5px;
+}
+.mobile-menu .home a.active {
+  color: #222222 !important;
+}
+.mobile-menu .expand {
+  right: 0;
+  position: absolute;
+  border-left: 1px solid #cccccc;
+  padding: 0 10px;
+  color: #fff;
+  margin-left: 100px;
+}
+.mobile-menu .expand:hover {
+  cursor: pointer;
+}
+.mobile-menu li {
+  display: block;
+  border-top: 1px solid #cccccc;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  padding-left: 0;
+  position: relative;
+}
+.mobile-menu li a {
+  display: block;
+  overflow: hidden;
+  white-space: normal;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  padding-left: 15px;
+}
+.mobile-menu li a.active {
+  color: #f7941d;
+}
+.mobile-menu li li {
+  background: #44c7f4;
+}
+.mobile-menu li li a {
+  padding-left: 25px;
+}
+.mobile-menu li li li {
+  background: #44c7f4;
+}
+.mobile-menu li li li a {
+  padding-left: 35px;
+}
+.mobile-menu .social a {
+  float: left;
+  padding: 0;
+  margin: 10px 0 10px 15px;
+}
+.mobile-menu .social i {
+  font-size: 22px;
+  color: #01c7c5;
+}
+.mobile-menu input.simple:focus {
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.mobile-menu [class^="icon-"]:before {
+  margin-right: 0;
+  margin-left: 0;
+}
+.mobile-menu [class*=" icon-"]:before {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.mm-toggle-wrap {
+  color: white;
+  width: 100%;
+  height: 45px;
+  background: #555555;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.mm-toggle {
+  cursor: pointer;
+  font-size: 22px;
+  display: none;
+  padding: 5px 10px;
+  width: auto;
+  float: left;
+  background: #44c7f4;
+  color: #fff;
+  border-right: 1px solid white;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+@media (max-width: 1023px) {
+  .mm-toggle {
+    display: block;
+  }
+  .mm-toggle .mm-label {
+    margin-left: 3px;
+  }
+}
+@media (max-width: 480px) {
+  .mm-toggle .mm-label {
+    display: none;
+  }
+}
+@font-face {
+  font-family: 'site-icons';
+  src: url('../fonts/site-icons.eot?51216790');
+  src: url('../fonts/site-icons.eot?51216790#iefix') format('embedded-opentype'),
+       url('../fonts/site-icons.woff?51216790') format('woff'),
+       url('../fonts/site-icons.ttf?51216790') format('truetype'),
+       url('../fonts/site-icons.svg?51216790#site-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'site-icons';
+    src: url('../font/site-icons.svg?51216790#site-icons') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "site-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-spin5:before { content: '\e800'; } /* '' */
+.icon-menu:before { content: '\e801'; } /* '' */
+.icon-down-open-mini:before { content: '\e802'; } /* '' */
+.icon-youtube-play:before { content: '\e803'; } /* '' */
+.icon-linkedin:before { content: '\e804'; } /* '' */
+.icon-linkedin-squared:before { content: '\e805'; } /* '' */
+.icon-facebook:before { content: '\e806'; } /* '' */
+.icon-facebook-squared:before { content: '\e807'; } /* '' */
+.icon-twitter:before { content: '\e808'; } /* '' */
+.icon-twitter-squared:before { content: '\e809'; } /* '' */
+.icon-search:before { content: '\e80a'; } /* '' */
+.icon-left-open-mini:before { content: '\e80b'; } /* '' */
+.icon-location:before { content: '\e80c'; } /* '' */
+.icon-phone:before { content: '\e80d'; } /* '' */
+.icon-phone-squared:before { content: '\e80e'; } /* '' */
+.icon-rss-squared:before { content: '\e80f'; } /* '' */
+.icon-rss:before { content: '\e810'; } /* '' */
+.icon-ellipsis-vert:before { content: '\e811'; } /* '' */
+.icon-plus:before { content: '\e812'; } /* '' */
+.icon-minus:before { content: '\e813'; } /* '' */
+.icon-youtube-squared:before { content: '\e814'; } /* '' */
+.icon-gplus-squared:before { content: '\e815'; } /* '' */
+.icon-gplus:before { content: '\e816'; } /* '' */
+.icon-print:before { content: '\e817'; } /* '' */
+.icon-share-squared:before { content: '\e818'; } /* '' */
+.icon-share:before { content: '\e819'; } /* '' */
+.icon-mail:before { content: '\e81a'; } /* '' */
+.icon-mail-alt:before { content: '\e81b'; } /* '' */
+.icon-video:before { content: '\e81c'; } /* '' */
+.icon-up-dir:before { content: '\e81d'; } /* '' */
+.icon-globe:before { content: '\e81e'; } /* '' */
+.icon-right-open-mini:before { content: '\e81f'; } /* '' */
+.icon-up-open-mini:before { content: '\e820'; } /* '' */
+.icon-down-open-big:before { content: '\e821'; } /* '' */
+.icon-left-open-big:before { content: '\e822'; } /* '' */
+.icon-right-open-big:before { content: '\e823'; } /* '' */
+.icon-up-open-big:before { content: '\e824'; } /* '' */
+.icon-cancel:before { content: '\e825'; } /* '' */
+.icon-help-circled:before { content: '\e826'; } /* '' */
+.icon-check:before { content: '\e827'; } /* '' */
+.icon-info-circled:before { content: '\e828'; } /* '' */
+.icon-angle-double-left:before { content: '\e829'; } /* '' */
+.icon-angle-double-right:before { content: '\e82a'; } /* '' */
+.icon-angle-double-up:before { content: '\e82b'; } /* '' */
+.icon-angle-double-down:before { content: '\e82c'; } /* '' */
+.icon-cancel-circled:before { content: '\e82d'; } /* '' */
+.icon-cancel-squared:before { content: '\e82e'; } /* '' */
+.icon-quote-left:before { content: '\e82f'; } /* '' */
+.icon-thumbs-up-alt:before { content: '\e830'; } /* '' */
+.icon-thumbs-down-alt:before { content: '\e831'; } /* '' */
+.icon-thumbs-down:before { content: '\e832'; } /* '' */
+.icon-thumbs-up:before { content: '\e833'; } /* '' */
+.icon-user:before { content: '\e834'; } /* '' */
+.icon-users:before { content: '\e835'; } /* '' */
+.icon-home:before { content: '\e836'; } /* '' */
+.icon-quote-right:before { content: '\e837'; } /* '' */
+.icon-lock:before { content: '\e838'; } /* '' */
+.icon-lock-open:before { content: '\e839'; } /* '' */
+.icon-lock-open-alt:before { content: '\e83a'; } /* '' */
+.icon-attach:before { content: '\e83b'; } /* '' */
+.icon-help:before { content: '\e83c'; } /* '' */
+.icon-picture:before { content: '\e83d'; } /* '' */
+.icon-sort-number-up:before { content: '\e83e'; } /* '' */
+.icon-sort-number-down:before { content: '\e83f'; } /* '' */
+.icon-sort-name-down:before { content: '\e840'; } /* '' */
+.icon-sort-name-up:before { content: '\e841'; } /* '' */
+.icon-sort-alt-down:before { content: '\e842'; } /* '' */
+.icon-sort-alt-up:before { content: '\e843'; } /* '' */
+.icon-git-squared:before { content: '\e844'; } /* '' */
+.icon-git:before { content: '\e845'; } /* '' */
+.icon-github:before { content: '\e846'; } /* '' */
+.icon-github-squared:before { content: '\e847'; } /* '' */
+.icon-pinterest-squared:before { content: '\e848'; } /* '' */
+.icon-pinterest-circled:before { content: '\e849'; } /* '' */
+.icon-tumblr-squared:before { content: '\e84a'; } /* '' */
+.icon-tumblr:before { content: '\e84b'; } /* '' */
+.icon-vimeo-squared:before { content: '\e84c'; } /* '' */
+.icon-skype:before { content: '\e84d'; } /* '' */
+.icon-flickr:before { content: '\e84e'; } /* '' */

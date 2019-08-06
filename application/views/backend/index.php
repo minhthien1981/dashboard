@@ -1,0 +1,11 @@
+<?php
+	if($layout){
+		$this->load->view('backend/header');
+		$this->load->view('backend/menu');
+		$this->load->view('backend/message');
+		$this->load->view('backend/'.$active.'/'.$subactive);
+		$this->load->view('backend/footer');
+	}else{
+		$this->load->view('backend/'.$active.'/'.$subactive);
+	}
+?>
